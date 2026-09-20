@@ -81,7 +81,7 @@ input:focus-visible {
 
 .list-part {
     background-color: #e2e0e0;
-    height: 250px;
+    min-height: 250px;
     width: 250px;
     place-self: center;
     border-radius: 20px;
