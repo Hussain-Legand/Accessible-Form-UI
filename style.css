@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 700px;
+    min-height: 500px;
+    margin: 20px auto;
+    border: 2px solid black;
+    display: flex;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.form-part {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 16px;
+}
+
+.line {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    border: 2px solid black;
+    outline: none;
+    border-radius: 5px;
+    height: 30px;
+}
+
+input:focus-visible {
+    border: 3px solid green;
+}
+
+
+.progress-container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg); /* البدء من الأعلى */
+}
+
+.progress-ring__circle {
+    stroke-dasharray: 314; /* المحيط = 2 * pi * r (2 * 3.1416 * 50 = 314) */
+    stroke-dashoffset: 314; /* تبدأ فارغة تماماً */
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.4s ease-in-out;
+}
+
+.percentage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.list-part {
+    background-color: #e2e0e0;
+    height: 250px;
+    width: 250px;
+    place-self: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.list-part > ul {
+    list-style: none;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.errormessage {
+    color: red;
+}
+
+.input::placeholder {
+    color: #a5a4a4;
+}
+
+.errormessage {
+    color: red;
+    font-size: 16px;
+}
+
+.item1, .item2, .item3 {
+    text-decoration: line-through solid black 2px;
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* تحويل العناصر لتكون تحت بعضها بدلاً من جنب بعض */
+        align-items: center;
+        padding: 20px;
+        margin: 15px;
+        gap: 30px;
+    }
+
+    form {
+        width: 100%; /* جعل الفورم يأخذ عرض الشاشة بالكامل */
+    }
+
+    .progress-container {
+        width: 100%;
+        order: -1; /* لجعل دائرة التقدم تظهر في الأعلى فوق الفورم في الموبايل (اختياري وجذاب جداً) */
+        margin-bottom: 10px;
+    }
+}

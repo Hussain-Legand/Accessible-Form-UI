@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/75ef6e93c6.js" crossorigin="anonymous"></script>
+    <title>Accessible Form UI</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-part">
+            <form onsubmit="return formValidate()">
+                <!-- Field One -->
+
+                <label for="name" class="line">Full Name</label>
+                <input type="text" id="name" placeholder="What Should We Call You ?" oninput="updateProgress()">
+                <div class="errormessage" id="error1"></div>
+
+                <!-- Field Two -->
+
+                <label for="email" class="line">Email</label>
+                <input type="email" id="email" placeholder="Let's Contact" oninput="updateProgress()">
+                <div class="errormessage" id="error2"></div>
+
+                <!-- Field Three -->
+
+                <label for="pass" class="line">Enter Password</label>
+                <input type="password" id="pass" placeholder="xxxxxxxx" oninput="updateProgress()">
+                <div class="errormessage" id="error3"></div>
+
+                <!-- Field Four -->
+
+                <label for="word" class="line">Confirm Password</label>
+                <input type="password" id="word" placeholder="xxxxxxxx" oninput="updateProgress()">
+                <div class="errormessage" id="error4"></div>
+
+                <!-- Submit -->
+
+                <input type="submit" id="button" value="Update Profile" style="cursor: pointer; font-weight: bold; font-size: 18px; background-color: #110; color: white; border: none;">
+
+                <!-- End of Form -->
+            </form>
+        </div>
+        <div class="progress-container">
+            <div class="circular-progress">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle-bg" cx="60" cy="60" r="50" stroke="#e6e6e6" stroke-width="5" fill="transparent"/>
+                    <circle class="progress-ring__circle" cx="60" cy="60" r="50" stroke="#111" stroke-width="5" fill="transparent"/>
+                </svg>
+                <div class="percentage-text" id="perText">0%</div>
+            </div>
+            <div class="list-part">
+                <ul>
+                    <Li class="item1">Create Account</Li>
+                    <Li class="item2">Update Roadmap Progress</Li>
+                    <Li class="item3">Setup Public Profile</Li>
+                    <Li class="item4">Complete Your First Project</Li>
+                    <Li class="item5">Invite Your Friends</Li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
